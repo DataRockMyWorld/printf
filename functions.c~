@@ -1,0 +1,103 @@
+#include "main.h"
+
+/**
+ * get_spec - Get the specifier required
+ * @spec: specifier
+ * @membs: pointer to arguments
+ * Return: Always 0
+ */
+int get_spec(char spec, va_list membs)
+{
+	int count;
+
+	count = 0;
+	if (spec == 'c')
+		count += print_char(va_arg(membs, int));
+	else if (spec == 's')
+		count += print_str(va_arg(membs, char *));
+	else if (spec == 'd' || spec == 'i')
+		count += print_int(va_arg(membs, int));
+
+	return (count);
+}
+
+/**
+ * print_char - Get the specifier required
+ * @c: character
+ *
+ * Return: Always 0
+ */
+
+int print_char(int c)
+{
+	putchar(c);
+	return (1);
+}
+
+/**
+ * print_str - Function prints spring
+ * @s: string input
+ *
+ * Return: Always 0
+ */
+
+int print_str(char *s)
+{
+	int i, count = 0;
+
+	for (i = 0; *s != '\0'; i++)
+	{
+		putchar(*s);
+		s++;
+		count++;
+	}
+	return (count);
+}
+
+/**
+ * print_int - Print an Integer
+ * @num: integer input
+ *
+ * Return: Always 0
+ */
+
+int print_int(int num)
+{
+	int count, i, j;
+	char buffer[32];
+
+	count = 0;
+
+	if (num < 0)
+	{
+		putchar('-');
+		count++;
+		num = -num;
+	}
+
+	i = 0;
+
+	do {
+		buffer[i++] = '0' + (num % 10);
+		num = num / 10;
+		count++;
+	} while (num > 0);
+
+	for (j = i - 1; j >= 0; j--)
+	{
+		putchar(buffer[j]);
+	}
+	return (count);
+}
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
