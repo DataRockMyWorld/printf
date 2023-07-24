@@ -31,8 +31,8 @@ output_c('0' + num[count - c - 1]);
 return (count);
 }
 /**
- * print_uns - Get the specifier required
- * @c - character input
+ * print_u - Get the specifier required
+ * @n: character input
  *
  * Return: Always 0
  */
@@ -61,8 +61,8 @@ return (count);
 }
 
 /**
- * print_uns - Get the specifier required
- * @c - character input
+ * print_o - Get the specifier required
+ * @n: character input
  *
  * Return: Always 0
  */
@@ -92,7 +92,7 @@ return (count);
 
 /**
  * print_x - Get the specifier required
- * @n - character input
+ * @n: character input
  *
  * Return: Always 0
  */
@@ -109,8 +109,8 @@ count = 0;
 while (n > 0 && place >= 0)
 {
 hex_array[place] = hex_values[n % 16];
-n/= 16;
-place --;
+n /= 16;
+place--;
 }
 for (j = place + 1; j < 8; j++)
 {
@@ -122,7 +122,7 @@ return (count);
 
 /**
  * print_capx - Print hexadecimal in capital
- * @n - character input
+ * @n: character input
  *
  * Return: Always 0
  */
@@ -140,7 +140,7 @@ count = 0;
 while (n > 0 && place >= 0)
 {
 hex_array[place] = hex_values[n % 16];
-n/= 16;
+n /= 16;
 place--;
 }
 for (j = place + 1; j < 8; j++)
