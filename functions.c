@@ -19,7 +19,14 @@ int get_spec(char spec, va_list membs)
 		count += print_int(va_arg(membs, int));
 	else if (spec == 'b')
 		count += print_bin(va_arg(membs, unsigned int));
-
+	else if (spec == 'u')
+		count += print_u(va_arg(membs, unsigned int));
+	else if (spec == 'o')
+		count += print_o(va_arg(membs, unsigned int));
+	else if (spec == 'x')
+		count += print_x(va_arg(membs, unsigned int));
+	else if (spec == 'X')
+		count += print_capx(va_arg(membs, unsigned int));
 	return (count);
 }
 

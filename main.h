@@ -14,5 +14,8 @@ int print_str(char *s);
 int print_int(int num);
 int _putchar(char c);
 int print_bin(unsigned int n);
-
+int print_u(unsigned int n);
+int print_o(unsigned int n);
+int print_x(unsigned int n);
+int print_capx(unsigned int n);
 #endif
