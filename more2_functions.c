@@ -46,9 +46,6 @@ int print_capstr(char *c)
 {
 int i, count = 0;
 
-if (c == NULL)
-return (-1);
-
 for (i = 0; c[i] != '\0'; i++)
 {
 if ((c[i] > 0 && c[i] < 32) || c[i] >= 127)
