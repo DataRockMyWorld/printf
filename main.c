@@ -18,5 +18,5 @@ _printf("Unsigned octal:[%o]\n", ui);
 printf("Unsigned octal:[%o]\n", ui);
 _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-	return (0);
+        return (0);
 }
