@@ -13,5 +13,6 @@ int print_char (int c);
 int print_str(char *s);
 int print_int(int num);
 int _putchar(char c);
+int print_bin(unsigned int n);
 
 #endif

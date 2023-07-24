@@ -17,6 +17,8 @@ int get_spec(char spec, va_list membs)
 		count += print_str(va_arg(membs, char *));
 	else if (spec == 'd' || spec == 'i')
 		count += print_int(va_arg(membs, int));
+	else if (spec == 'b')
+		count += print_bin(va_arg(membs, unsigned int));
 
 	return (count);
 }
@@ -91,7 +93,7 @@ int print_int(int num)
 }
 
 /**
- * ouput_c - writes the character c to stdout
+ * output_c - writes the character c to stdout
  * @c: The character to print
  *
  * Return: On success 1.
