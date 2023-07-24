@@ -30,7 +30,7 @@ int get_spec(char spec, va_list membs)
 
 int print_char(int c)
 {
-	_putchar(c);
+	output_c(c);
 	return (1);
 }
 
@@ -47,7 +47,7 @@ int print_str(char *s)
 
 	for (i = 0; *s != '\0'; i++)
 	{
-		_putchar(*s);
+		output_c(*s);
 		s++;
 		count++;
 	}
@@ -70,7 +70,7 @@ int print_int(int num)
 
 	if (num < 0)
 	{
-		_putchar('-');
+		output_c('-');
 		count++;
 		num = -num;
 	}
@@ -85,19 +85,19 @@ int print_int(int num)
 
 	for (j = i - 1; j >= 0; j--)
 	{
-		putchar(buffer[j]);
+		output_c(buffer[j]);
 	}
 	return (count);
 }
 
 /**
- * _putchar - writes the character c to stdout
+ * ouput_c - writes the character c to stdout
  * @c: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar(char c)
+int output_c(char c)
 {
 	return (write(1, &c, 1));
 }
