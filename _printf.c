@@ -1,10 +1,11 @@
 #include "main.h"
 
- /**
- * _printf - Writes output to std output
- * @format: input in string format.
- * Return: 0 on success.
- */
+
+/**
+* _printf - Writes output to std output
+* @format: input in string format.
+* Return: 0 on success.
+*/
 
 int _printf(const char *format, ...)
 {
@@ -18,6 +19,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	count = 0;
+
 	for (i = 0; *format != '\0'; i++)
 	{
 		if (*format == '%')

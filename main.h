@@ -7,7 +7,7 @@
 
 #define BUFFER_SIZE 1024
 int _printf(const char *format, ...);
-int _putchar(char *c);
+int _putchar(char c);
 int get_spec(char spec, va_list membs);
 int print_char (int c);
 int print_str(char *s);
