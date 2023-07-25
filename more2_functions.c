@@ -77,3 +77,45 @@ void print_storage(char storage[], int *index)
 
 	*index = 0;
 }
+
+/**
+ * print_pointer - Print address of string
+ * @ptr - character pointeer input
+ *
+ * Return: Always 0
+ */
+
+int print_pointer(void *ptr)
+{
+	int i, j;
+	const char hex[] = "0123456789abcdef";
+	int count;
+	char array_hex[18];
+	uintptr_t home = (uintptr_t)ptr;
+
+	count = 0;
+
+	output_c('0');
+	count++;
+	output_c('x');
+	count++;
+
+	for (i = 15; i >= 0; i--)
+	{
+		array_hex[i] = hex[home % 16];
+		home /= 16;
+	}
+	array_hex[16] = '\0';
+
+	j = 0;
+	while (array_hex[j] == '0' && j < 15)
+	j++;
+
+	while (j < 16)
+	{
+		output_c(*array_hex);
+		count++;
+		j++;
+	}
+	return (count);
+}

@@ -29,6 +29,8 @@ int get_spec(char spec, va_list membs)
 		count += print_capx(va_arg(membs, unsigned int));
 	else if (spec == 'S')
 		count += print_capstr(va_arg(membs, char *));
+	else if (spec == 'r')
+		count += print_reverse(va_arg(membs, char *)); 
 	return (count);
 }
 
