@@ -13,13 +13,12 @@ int _printf(const char *format, ...)
 
 	va_list membs;
 
+	count = 0;
+
 	va_start(membs, format);
 
 	if (format == NULL)
-		return (-1);
-
-	count = 0;
-
+		return (count);
 	for (; *format != '\0'; format++)
 	{
 		if (*format == '%')
@@ -27,21 +26,19 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 			{
-				output_c('%');
-				count++;
+				count += output_c('%');
 			}
 			else
 			{
 				count += get_spec(*(format), membs);
 			}
-			format++;
 		}
 		else
 		{
-			output_c(*format);
-			count++;
+			count += output_c(*format);
 		}
 	}
+
 	va_end(membs);
 	return (count);
 }
