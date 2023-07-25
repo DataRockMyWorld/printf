@@ -43,6 +43,7 @@ int print_char(int c)
 {
 	return (output_c(c));
 }
+
 /**
  * print_str - Function prints spring
  * @s: string input
@@ -59,7 +60,7 @@ if (s == NULL)
 	return (-1);
 for (; *s != '\0'; s++)
 {
-	count += output_c(*s);
+count += output_c(*s);
 }
 return (count);
 }
