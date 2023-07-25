@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	int count, index;
-	char storage[BUFF_SIZE];
+	char storage[BUFFER_SIZE];
 	va_list membs;
 
 	count = 0;
@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			if (*format == '%')
 			{
 				storage[index++] = '%';
-				if (index == BUFF_SIZE)
+				if (index == BUFFER_SIZE)
 				{
 					print_storage(storage, &index);
 					count += index;
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			storage[index++] = *format;
-			if (index == BUFF_SIZE)
+			if (index == BUFFER_SIZE)
 			{
 				print_storage(storage, &index);
 				count += index;
