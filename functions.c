@@ -43,7 +43,7 @@ int print_char(int c)
 {
 	char storage[BUFFER_SIZE];
 	int count;
-	int index;
+	int index = 0;
 
 	count = 0;
 
@@ -53,6 +53,7 @@ int print_char(int c)
 		print_storage(storage, &index);
 		count += index;
 	}
+	return (count);
 }
 /**
  * print_str - Function prints spring
