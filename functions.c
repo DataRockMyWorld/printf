@@ -41,8 +41,7 @@ int get_spec(char spec, va_list membs)
 
 int print_char(int c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (output_c(c));
 }
 
 /**
@@ -54,15 +53,13 @@ int print_char(int c)
 
 int print_str(char *s)
 {
-int i, count;
-
+int count;
 count = 0;
-
-for (i = 0; *s != '\0'; i++)
+if (s == NULL)
+return (-1);
+for (; *s != '\0'; s++)
 {
-output_c(*s);
-s++;
-count++;
+count += output_c(*s);
 }
 return (count);
 }

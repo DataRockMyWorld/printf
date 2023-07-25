@@ -25,14 +25,11 @@ int _printf(const char *format, ...)
 				count += output_c('%');
 			}
 			else
-				count += get_spec(*(format), membs);
+				count += get_spec(*format, membs);
 		}
 		else
-		{
 			count += output_c(*format);
-		}
 	}
-
 	va_end(membs);
 	return (count);
 }
