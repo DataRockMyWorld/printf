@@ -71,7 +71,6 @@ return (count);
  */
 void print_storage(char storage[], int *index)
 {
-	int i;
 
 	if (*index > 0)
 		write(1, &storage[0], *index);

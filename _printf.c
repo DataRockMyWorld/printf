@@ -1,7 +1,5 @@
 #include "main.h"
 
-#define 
-
 /**
 * _printf - Writes output to std output
 * @format: input in string format.

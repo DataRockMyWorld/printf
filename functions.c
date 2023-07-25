@@ -66,20 +66,21 @@ int print_str(char *s)
 {
 int count;
 char storage[BUFFER_SIZE];
+int index;
 
 index = 0;
-int count = 0;
+count = 0;
 
 if (s == NULL)
 return (-1);
 
 for (; *s != '\0'; s++)
 {
-storage[index++] = s[i];
+storage[index++] = *s;
 
 if (index == BUFFER_SIZE)
 {
-print_storage[storage, &index];
+print_storage(storage, &index);
 count += index;
 }
 }
