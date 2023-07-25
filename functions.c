@@ -40,9 +40,8 @@ int get_spec(char spec, va_list membs)
  */
 
 int print_char(int c)
-{
-	output_c(c);
-	return (1);
+{	
+	return (output_c(c));
 }
 
 /**
