@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	count = 0;
 	va_start(membs, format);
 	if (format == NULL)
-		return (count);
+		return (-1);
 	for (; *format != '\0'; format++)
 	{
 		if (*format == '%')
