@@ -41,20 +41,10 @@ int get_spec(char spec, va_list membs)
 
 int print_char(int c)
 {
-	char storage[BUFFER_SIZE];
-	int count;
-	int index = 0;
-
-	count = 0;
-
-	storage[index++] = c;
-	if (index == BUFFER_SIZE)
-	{
-		print_storage(storage, &index);
-		count += index;
-	}
-	return (count);
+	write(1, &c, 1);
+	return (1);
 }
+
 /**
  * print_str - Function prints spring
  * @s: string input
@@ -64,25 +54,15 @@ int print_char(int c)
 
 int print_str(char *s)
 {
-int count;
-char storage[BUFFER_SIZE];
-int index;
+int i, count;
 
-index = 0;
 count = 0;
 
-if (s == NULL)
-return (-1);
-
-for (; *s != '\0'; s++)
+for (i = 0; *s != '\0'; i++)
 {
-storage[index++] = *s;
-
-if (index == BUFFER_SIZE)
-{
-print_storage(storage, &index);
-count += index;
-}
+output_c(*s);
+s++;
+count++;
 }
 return (count);
 }

@@ -7,12 +7,11 @@
 */
 int _printf(const char *format, ...)
 {
-	int count, index;
-	char storage[BUFFER_SIZE];
+	int count;
+
 	va_list membs;
 
 	count = 0;
-	index = 0;
 	va_start(membs, format);
 	if (format == NULL)
 		return (count);
@@ -23,28 +22,16 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 			{
-				storage[index++] = '%';
-				if (index == BUFFER_SIZE)
-				{
-					print_storage(storage, &index);
-					count += index;
-				}
+				count += output_c('%');
 			}
 			else
 				count += get_spec(*(format), membs);
 		}
 		else
 		{
-			storage[index++] = *format;
-			if (index == BUFFER_SIZE)
-			{
-				print_storage(storage, &index);
-				count += index;
-			}
+			count += output_c(*format);
 		}
 	}
-	print_storage(storage, &index);
-	count += index;
 
 	va_end(membs);
 	return (count);
