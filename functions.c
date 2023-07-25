@@ -79,6 +79,12 @@ int print_int(int num)
 
 	count = 0;
 
+	if (num == 0)
+	{
+		output_c('0');
+		return (1);
+	}
+
 	if (num < 0)
 	{
 		output_c('-');
