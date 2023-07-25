@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int count, i;
+	int count;
 
 	va_list membs;
 
@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 
 	count = 0;
 
-	for (i = 0; *format != '\0'; i++)
+	for (; *format != '\0'; format++)
 	{
 		if (*format == '%')
 		{
@@ -40,7 +40,6 @@ int _printf(const char *format, ...)
 		{
 			output_c(*format);
 			count++;
-			format++;
 		}
 	}
 	va_end(membs);
