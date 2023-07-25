@@ -55,10 +55,11 @@ int print_char(int c)
 
 int print_str(char *s)
 {
-int count;
-count = 0;
+int count = 0;
+if (strcmp(s, "") == 0)
+	return (0);
 if (s == NULL)
-return (-1);
+	return (-1);
 for (; *s != '\0'; s++)
 {
 count += output_c(*s);
