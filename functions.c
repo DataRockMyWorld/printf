@@ -40,11 +40,9 @@ int get_spec(char spec, va_list membs)
  */
 
 int print_char(int c)
-{	
-	output_c(c);
-	return (1);
+{
+	return (output_c(c));
 }
-
 /**
  * print_str - Function prints spring
  * @s: string input
@@ -54,15 +52,15 @@ int print_char(int c)
 
 int print_str(char *s)
 {
-	int count = 0;
-	if (s == NULL)
-		return (-1);
+int count = 0;
 
-	for (; *s != '\0'; s++)
-	{
-		count += output_c(*s);
-	}
-	return (count);
+if (s == NULL)
+	return (-1);
+for (; *s != '\0'; s++)
+{
+	count += output_c(*s);
+}
+return (count);
 }
 
 /**
