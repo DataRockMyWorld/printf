@@ -53,7 +53,8 @@ int print_char(int c)
 int print_str(char *s)
 {
 int count = 0;
-
+if (s == "")
+	return (0);
 if (s == NULL)
 	return (-1);
 for (; *s != '\0'; s++)
