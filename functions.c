@@ -54,13 +54,11 @@ int print_char(int c)
 
 int print_str(char *s)
 {
-	int i, count = 0;
+	int count = 0;
 
-	for (i = 0; *s != '\0'; i++)
+	for (; *s != '\0'; s++)
 	{
-		output_c(*s);
-		s++;
-		count++;
+		count += output_c(*s);
 	}
 	return (count);
 }
