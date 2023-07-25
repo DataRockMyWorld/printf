@@ -19,4 +19,5 @@ int print_o(unsigned int n);
 int print_x(unsigned int n);
 int print_capx(unsigned int n);
 int print_capstr(char *c);
+int print_storage(char storage[], int *index);
 #endif

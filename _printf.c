@@ -1,45 +1,49 @@
 #include "main.h"
 
-
 /**
 * _printf - Writes output to std output
 * @format: input in string format.
 * Return: 0 on success.
 */
-
 int _printf(const char *format, ...)
 {
-	int count;
-
+	int count, index;
+	char storage[BUFF_SIZE];
 	va_list membs;
 
 	count = 0;
-
 	va_start(membs, format);
-
 	if (format == NULL)
 		return (count);
-
-	while (*format != '\0')
+	for (; *format != '\0'; format++)
 	{
 		if (*format == '%')
 		{
 			format++;
 			if (*format == '%')
 			{
-				count += output_c('%');
+				storage[index++] = '%';
+				if (index == BUFF_SIZE)
+				{
+					print_storage(storage, &index);
+					count += index;
+				}
 			}
 			else
-			{
 				count += get_spec(*(format), membs);
-			}
 		}
 		else
 		{
-			count += output_c(*format);
+			storage[index++] = *format;
+			if (index == BUFF_SIZE)
+			{
+				print_storage(storage, &index);
+				count += index;
+			}
 		}
-		format++;
 	}
+	print_storage(storage, &index);
+	count += index;
 
 	va_end(membs);
 	return (count);

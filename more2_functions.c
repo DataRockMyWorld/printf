@@ -6,6 +6,7 @@
  *
  * Return: Always 0
  */
+
 int hex(int n)
 {
 int place, count, j = 0;
@@ -61,4 +62,24 @@ count++;
 }
 }
 return (count);
+}
+
+/**
+ * print_storage - Prints the contents of the buffer
+ * @storage: Array of chars
+ * @index: represents the length.
+ */
+void print_storage(char storage[], int *index)
+{
+	int i;
+
+	if (*index > 0)
+	{
+		for (i = 0; i < *index; i++)
+		{
+			output_c(storage[i]);
+		}
+	}
+
+	*index = 0;
 }
