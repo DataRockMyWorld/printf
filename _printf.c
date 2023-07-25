@@ -1,5 +1,7 @@
 #include "main.h"
 
+#define 
+
 /**
 * _printf - Writes output to std output
 * @format: input in string format.
@@ -12,6 +14,7 @@ int _printf(const char *format, ...)
 	va_list membs;
 
 	count = 0;
+	index = 0;
 	va_start(membs, format);
 	if (format == NULL)
 		return (count);

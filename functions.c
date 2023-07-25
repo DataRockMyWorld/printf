@@ -64,13 +64,24 @@ int print_char(int c)
 
 int print_str(char *s)
 {
+int count;
+char storage[BUFFER_SIZE];
+
+index = 0;
 int count = 0;
 
 if (s == NULL)
-	return (-1);
+return (-1);
+
 for (; *s != '\0'; s++)
 {
-	count += output_c(*s);
+storage[index++] = s[i];
+
+if (index == BUFFER_SIZE)
+{
+print_storage[storage, &index];
+count += index;
+}
 }
 return (count);
 }

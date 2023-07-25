@@ -74,12 +74,7 @@ void print_storage(char storage[], int *index)
 	int i;
 
 	if (*index > 0)
-	{
-		for (i = 0; i < *index; i++)
-		{
-			output_c(storage[i]);
-		}
-	}
+		write(1, &storage[0], *index);
 
 	*index = 0;
 }
