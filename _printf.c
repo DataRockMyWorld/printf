@@ -9,40 +9,38 @@
 
 int _printf(const char *format, ...)
 {
-	int count, i;
+	int count;
 
 	va_list membs;
+
+	count = 0;
 
 	va_start(membs, format);
 
 	if (format == NULL)
-		return (-1);
+		return (count);
 
-	count = 0;
-
-	for (i = 0; *format != '\0'; i++)
+	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
 			if (*format == '%')
 			{
-				output_c('%');
-				count++;
+				count += output_c('%');
 			}
 			else
 			{
 				count += get_spec(*(format), membs);
 			}
-			format++;
 		}
 		else
 		{
-			output_c(*format);
-			count++;
-			format++;
+			count += output_c(*format);
 		}
+		format++;
 	}
+
 	va_end(membs);
 	return (count);
 }
