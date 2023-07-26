@@ -59,7 +59,7 @@ int print_str(char *s)
 {
 int count = 0;
 if (s == NULL)
-	return (-1);
+	write(1, "(null)", 6);
 for (; *s != '\0'; s++)
 {
 count += output_c(*s);

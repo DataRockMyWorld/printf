@@ -80,7 +80,7 @@ void print_storage(char storage[], int *index)
 
 /**
  * print_pointer - Print address of string
- * @ptr - character pointeer input
+ * @ptr: character pointeer input
  *
  * Return: Always 0
  */
