@@ -24,8 +24,12 @@ int _printf(const char *format, ...)
 			{
 				count += output_c('%');
 			}
-			else
-				count += get_spec(*format, membs);
+			else if (*format == '\0')
+				return (-1);
+			else if (*format == ' ')
+				return (-1);
+
+			count += get_spec(*format, membs);
 		}
 		else
 			count += output_c(*format);
