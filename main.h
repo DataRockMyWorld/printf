@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdint.h>
 #include <stdint.h>
 
@@ -25,4 +24,5 @@ int print_capx(unsigned int n);
 int print_capstr(char *c);
 int print_reverse(char *s);
 void print_storage(char storage[], int *index);
+int print_rot(char *s);
 #endif

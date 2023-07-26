@@ -30,7 +30,9 @@ int get_spec(char spec, va_list membs)
 	else if (spec == 'S')
 		count += print_capstr(va_arg(membs, char *));
 	else if (spec == 'r')
-		count += print_reverse(va_arg(membs, char *)); 
+		count += print_reverse(va_arg(membs, char *));
+	else if (spec == 'R')
+		count += print_rot(va_arg(membs, char *));
 	return (count);
 }
 
