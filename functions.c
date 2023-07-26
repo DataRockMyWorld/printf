@@ -30,7 +30,9 @@ int get_spec(char spec, va_list membs)
 	else if (spec == 'S')
 		count += print_capstr(va_arg(membs, char *));
 	else if (spec == 'r')
-		count += print_reverse(va_arg(membs, char *)); 
+		count += print_reverse(va_arg(membs, char *));
+	else if (spec == 'R')
+		count += print_rot(va_arg(membs, char *));
 	return (count);
 }
 
@@ -56,8 +58,6 @@ int print_char(int c)
 int print_str(char *s)
 {
 int count = 0;
-if (strcmp(s, "") == 0)
-	return (0);
 if (s == NULL)
 	return (-1);
 for (; *s != '\0'; s++)
