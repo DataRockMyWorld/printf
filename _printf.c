@@ -28,8 +28,6 @@ int _printf(const char *format, ...)
 				return (-1);
 			else if (*format == ' ')
 				return (-1);
-			else if (*format != get_spec(*format, membs))
-				count += output_c(*format);
 
 			count += get_spec(*format, membs);
 		}
