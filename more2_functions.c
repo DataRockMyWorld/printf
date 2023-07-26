@@ -84,7 +84,6 @@ void print_storage(char storage[], int *index)
  *
  * Return: Always 0
  */
-
 int print_pointer(void *ptr)
 {
 	int i, j;
