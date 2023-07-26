@@ -6,7 +6,8 @@
 */
 int _printf(const char *format, ...)
 {
-	int count, f;
+	int count;
+
 	va_list membs;
 
 	count = 0;
@@ -20,11 +21,6 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 				count += output_c('%');
-			else if (*format == '+' || *format == '#' || *format == ' ')
-			{
-				f += print_flag(*format);
-				format++;
-			}
 			else
 				count += get_spec(*format, membs);
 		}
