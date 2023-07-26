@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
 * _printf - Writes output to std output
 * @format: input in string format.
@@ -21,8 +20,8 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == '%')
-			{
 				count += output_c('%');
+
 			}
 			else if (*format == '\0')
 				return (-1);
@@ -30,6 +29,10 @@ int _printf(const char *format, ...)
 				return (-1);
 
 			count += get_spec(*format, membs);
+
+			else
+				count += get_spec(*format, membs);
+
 		}
 		else
 			count += output_c(*format);
