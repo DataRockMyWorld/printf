@@ -66,3 +66,73 @@ int print_rot(char *s)
 	}
 	return (count);
 }
+/**
+ * print_flag - return int associated with flag
+ * @c: flag type
+ *
+ * Return: int
+ */
+int print_flag(int c)
+{
+	int a = 0;
+
+	if (c == '+')
+		a = 1;
+	if (c == '#')
+		a = 2;
+	if (c == ' ')
+		a = 3;
+	if (c == '-')
+		a = 4;
+	return (a);
+}
+/**
+ * add_flag - used for non-custom converion specifiers
+ * @f: result from print_flag
+ * @format: flag type
+ * @membs: argument
+ *
+ * Return: count
+ */
+int add_flag(int f, char format, va_list membs)
+{
+	int count = 0, v = va_arg(membs, int);
+
+	if (f == 1)
+	{
+		if (format == 'd' && v > 0)
+		{
+			count += output_c('+');
+			count += print_int(v);
+		}
+		else if (format == 'd' && v < 0)
+			count += print_int(v);
+	}
+	else if (f == 2)
+	{
+		count += output_c('0');
+		if (format == 'x')
+		{
+			count += output_c('x');
+			count += print_x(v);
+		}
+		else if (format == 'X')
+		{
+			count += output_c('x');
+			count += print_capx(v);
+		}
+		else if (format == 'o')
+			count += print_o(v);
+	}
+	else if (f == 3)
+	{
+		if (format == 'd' && v > 0)
+		{
+			count += output_c(' ');
+			count += print_int(v);
+		}
+		else if (format == 'd' && v < 0)
+			count += print_int(v);
+	}
+return (count);
+}

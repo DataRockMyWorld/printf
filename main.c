@@ -18,7 +18,9 @@ int main(void)
 	_printf("Unsigned octal:[%o]\n", ui);
 	_printf("Address:[%p]\n", addr);
 	_printf("Negative:[%d]\n", -762534);
-	_printf("%!/n");
-	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+	_printf("Negative:[% d]\n", 762534);
+	_printf("Negative:[%+d]\n", 762534);
+	_printf("Negative:[%#x]\n", 762534);
+	_printf("Negative:[% d]\n", -762534);
 	return (0);
 }

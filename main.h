@@ -25,4 +25,6 @@ int print_capstr(char *c);
 int print_reverse(char *s);
 void print_storage(char storage[], int *index);
 int print_rot(char *s);
+int print_flag(int c);
+int add_flag(int, char c, va_list m);
 #endif
