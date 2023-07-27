@@ -17,11 +17,21 @@ int main(void)
 
 	_printf("Unsigned octal:[%o]\n", ui);
 	_printf("Address:[%p]\n", addr);
-	_printf("Negative:[%d]\n", -762534);
-	_printf("Negative:[% d]\n", 762534);
-	_printf("Negative:[%+d]\n", 762534);
-	_printf("Negative:[%#x]\n", 762534);
-	_printf("Negative:[% d]\n", -762534);
 	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+
+	_printf("%+d\n", 1024);
+	_printf("%+d\n", -1024);
+	_printf("%+d\n", 0);
+	_printf("%+d\n", INT_MAX);
+	_printf("%+d\n", INT_MIN);
+	_printf("%+d - %+d = %+d\n", 1024, 2048, -1024);
+	_printf("%+i - %+i = %+i\n", 1024, 2048, -1024);
+	_printf("% d\n", 1024);
+	_printf("% d\n", -1024);
+	_printf("% d\n", 0);
+	_printf("% d\n", INT_MAX);
+	_printf("% d\n", INT_MIN);
+	_printf("% d - % d = % d\n", 1024, 2048, -1024);
+	print_int(INT_MAX);
 	return (0);
 }

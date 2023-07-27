@@ -100,7 +100,7 @@ int add_flag(int f, char format, va_list membs)
 
 	if (f == 1)
 	{
-		if ((format == 'd' || format == 'i') && v > 0)
+		if ((format == 'd' || format == 'i') && v >= 0)
 		{
 			count += output_c('+');
 			count += print_int(v);
@@ -126,7 +126,7 @@ int add_flag(int f, char format, va_list membs)
 	}
 	else if (f == 3)
 	{
-		if ((format == 'd' || format == 'i' || format == 'f') && v > 0)
+		if ((format == 'd' || format == 'i' || format == 'f') && v >= 0)
 		{
 			count += output_c(' ');
 			count += print_int(v);
