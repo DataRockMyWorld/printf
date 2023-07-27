@@ -25,8 +25,6 @@ int _printf(const char *format, ...)
 				count += output_c('%');
 			else if (*format == '\0')
 				return (-1);
-			else if (*format == ' ')
-				return (-1);
 			else if (*format == '+' || *format == '#' || *format == ' ')
 			{
 				f += print_flag(*format);
