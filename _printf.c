@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 				return (-1);
 			else if (*format == '+' || *format == '#' || *format == ' ')
 			{
-				f += print_flag(*format);
+				f = print_flag(*format);
 				format++;
 				count += add_flag(f, *format, membs);
 			}
