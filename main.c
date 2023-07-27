@@ -22,5 +22,6 @@ int main(void)
 	_printf("Negative:[%+d]\n", 762534);
 	_printf("Negative:[%#x]\n", 762534);
 	_printf("Negative:[% d]\n", -762534);
+	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 	return (0);
 }

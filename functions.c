@@ -33,6 +33,8 @@ int get_spec(char spec, va_list membs)
 		count += print_reverse(va_arg(membs, char *));
 	else if (spec == 'R')
 		count += print_rot(va_arg(membs, char *));
+	else if (spec == 'p')
+		count += print_pointer(va_arg(membs, void *));
 	return (count);
 }
 
@@ -59,7 +61,11 @@ int print_str(char *s)
 {
 int count = 0;
 if (s == NULL)
-	write(1, "(null)", 6);
+{
+write(1, "(null)", 6);
+return (count);
+}
+   
 for (; *s != '\0'; s++)
 {
 count += output_c(*s);

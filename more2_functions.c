@@ -112,7 +112,7 @@ int print_pointer(void *ptr)
 
 	while (j < 16)
 	{
-		output_c(*array_hex);
+		output_c(array_hex[j]);
 		count++;
 		j++;
 	}
