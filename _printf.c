@@ -34,7 +34,9 @@ int _printf(const char *format, ...)
 				count += add_flag(f, *format, membs);
 			}
 			else
+			{
 				count += get_spec(*format, membs);
+			}
 		}
 		else
 			count += output_c(*format);
