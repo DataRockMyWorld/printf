@@ -100,12 +100,12 @@ int add_flag(int f, char format, va_list membs)
 
 	if (f == 1)
 	{
-		if (format == 'd' && v > 0)
+		if ((format == 'd' || format == 'i') && v > 0)
 		{
 			count += output_c('+');
 			count += print_int(v);
 		}
-		else if (format == 'd' && v < 0)
+		else if ((format == 'd' || format == 'i') && v < 0)
 			count += print_int(v);
 	}
 	else if (f == 2)
@@ -126,12 +126,12 @@ int add_flag(int f, char format, va_list membs)
 	}
 	else if (f == 3)
 	{
-		if (format == 'd' && v > 0)
+		if ((format == 'd' || format == 'i' || format == 'f') && v > 0)
 		{
 			count += output_c(' ');
 			count += print_int(v);
 		}
-		else if (format == 'd' && v < 0)
+		else if ((format == 'd' || format == 'i' || format == 'f') && v < 0)
 			count += print_int(v);
 	}
 return (count);
