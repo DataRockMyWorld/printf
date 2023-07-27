@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * get_spec - Get the specifier required
@@ -93,6 +94,17 @@ int print_int(int num)
 		return (1);
 	}
 
+	if (num == INT_MIN)
+	{
+	const char min_int_str[] = "-2147483648";
+	for (i = 0; min_int_str[i] != '\0'; i++)
+	{
+		output_c(min_int_str[i]);
+		count++;
+	}
+	return count;
+	}
+	
 	if (num < 0)
 	{
 		output_c('-');
