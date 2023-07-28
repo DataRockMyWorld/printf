@@ -106,7 +106,7 @@ hex_array[8] = '\0';
 place = 7;
 count = 0;
 
-while (n > 0 && place >= 0)
+while (n >= 0 && place >= 0)
 {
 hex_array[place] = hex_values[n % 16];
 n /= 16;
@@ -137,7 +137,7 @@ hex_array[8] = '\0';
 place = 7;
 count = 0;
 
-while (n > 0 && place >= 0)
+while (n >= 0 && place >= 0)
 {
 hex_array[place] = hex_values[n % 16];
 n /= 16;
