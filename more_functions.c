@@ -102,11 +102,16 @@ int place, count, j = 0;
 char hex_values[] = "0123456789abcdef";
 char hex_array[9];
 
+if (n == 0)
+{
+	output_c('0');
+	return (1);
+}
 hex_array[8] = '\0';
 place = 7;
 count = 0;
 
-while (n >= 0 && place >= 0)
+while (n > 0 && place >= 0)
 {
 hex_array[place] = hex_values[n % 16];
 n /= 16;
@@ -132,12 +137,17 @@ int place, count, j = 0;
 char hex_values[] = "0123456789ABCDEF";
 char hex_array[9];
 
+if (n == 0)
+{
+        output_c('0');
+        return (1);
+}
 hex_array[8] = '\0';
 
 place = 7;
 count = 0;
 
-while (n >= 0 && place >= 0)
+while (n > 0 && place >= 0)
 {
 hex_array[place] = hex_values[n % 16];
 n /= 16;
