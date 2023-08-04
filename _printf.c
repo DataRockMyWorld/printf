@@ -7,13 +7,10 @@
 int _printf(const char *format, ...)
 {
 	int count, f = 0;
-
 	va_list membs;
 
 	count = 0;
-
 	va_start(membs, format);
-
 	if (format == NULL)
 		return (-1);
 	for (; *format != '\0'; format++)
@@ -30,6 +27,14 @@ int _printf(const char *format, ...)
 				f = print_flag(*format);
 				format++;
 				count += add_flag(f, *format, membs);
+			}
+			else if (*format == 'h')
+			{
+				format++;
+				if (*format == 'd' || 'i' || 'u' || 'o' || 'x' || 'X')
+				{
+					count += (short int)get_spec(*format, membs);
+				}
 			}
 			else
 			{
