@@ -28,4 +28,6 @@ int print_rot(char *s);
 int print_flag(int c);
 int add_flag(int, char c, va_list m);
 int print_pointer(void *ptr);
+int handle_long(char format, va_list membs);
+int handle_short(char format, va_list membs);
 #endif

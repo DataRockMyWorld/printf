@@ -20,8 +20,6 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 				count += output_c('%');
-			else if (*format == '\0')
-				return (-1);
 			else if (*format == '+' || *format == '#' || *format == ' ')
 			{
 				f = print_flag(*format);
@@ -31,10 +29,12 @@ int _printf(const char *format, ...)
 			else if (*format == 'h')
 			{
 				format++;
-				if (*format == 'd' || 'i' || 'u' || 'o' || 'x' || 'X')
-				{
-					count += (short int)get_spec(*format, membs);
-				}
+				count += handle_short(*format, membs);
+			}
+			else if (*format == 'l')
+			{
+				format++;
+				count += handle_long(*format, membs);
 			}
 			else
 			{
