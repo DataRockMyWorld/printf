@@ -23,8 +23,6 @@ count = 0;
 while (n > 0)
 {
 hex_array[place] = hex_values[n % 16];
-if (n == 0)
-break;
 n /= 16;
 place++;
 }
@@ -49,7 +47,7 @@ int i, count = 0;
 
 for (i = 0; c[i] != '\0'; i++)
 {
-if ((c[i] > 0 && c[i] < 32) || c[i] >= 127)
+if ((c[i] > 0 && c[i] < 32) || (c[i] >= 127))
 {
 output_c('\\');
 output_c('x');
